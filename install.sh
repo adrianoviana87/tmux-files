@@ -18,5 +18,8 @@ function abspath {
 }
 
 abspath "./tmux.conf"
-echo "source ${result}" > ~/.tmux.conf
+tmux_path=$result
+abspath "./default-theme.tmuxtheme"
+theme_path=$result
+printf "source ${tmux_path}\nsource ${theme_path}" > ~/.tmux.conf
 
