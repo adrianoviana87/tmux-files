@@ -119,7 +119,7 @@ set -goqF @theme-window-status-current-format " #{@themepack-window-status-curre
 
 # Customizable prefixes and suffixes for @theme-* format options
 set -goq @theme-status-left-prefix ""
-set -goq @theme-status-left-suffix '#(gitmux -cfg .gitmux.conf "#{pane_current_path}")'
+set -goq @theme-status-left-suffix '#(gitmux -cfg ~/tmux-files/.gitmux.conf "#{pane_current_path}")'
 set -goq @theme-status-right-prefix ""
 set -goq @theme-status-right-suffix ""
 set -goq @theme-window-status-current-prefix ""
