@@ -1,3 +1,4 @@
+# vi: ft=tmux
 set -goq @color-status-fg default
 set -goq @color-status-bg default
 set -goq @color-mode-fg default
@@ -19,7 +20,7 @@ set -gF  message-style "fg=#{@color-status-fg},bg=#{@color-status-bg}"
 set -g   status-interval 1
 set -g   status-justify right
 
-set -g   status-left "#[fg=colour54,bg=default]#[fg=colour253,bg=colour54]󰃰 %d-%b-%y %H:%M:%S#[fg=colour55,bg=colour57]#[bg=colour57]#(gitmux -cfg ~/tmux-files/.gitmux.conf \"#{pane_current_path}\")#[fg=colour57,bg=default]"
+set -g   status-left "#[fg=colour254,bg=colour234] 󰍹 #S #[fg=colour234,bg=colour54] #[fg=colour253,bg=colour54]󰃰 %d-%b-%y %H:%M:%S#[fg=colour55,bg=colour57]#[bg=colour57]#(gitmux -cfg ~/tmux-files/.gitmux.conf \"#{pane_current_path}\")#[fg=colour57,bg=default]"
 set -g   status-left-length 100
 set -gF  status-left-style "fg=#{@color-status-fg},bg=#{@color-status-bg}"
 
@@ -30,12 +31,12 @@ set -gF  status-style "fg=#{@color-status-fg},bg=#{@color-status-bg}"
 set -gwF mode-style "fg=#{@color-mode-fg},bg=#{@color-mode-bg}"
 set -gwF pane-active-border-style "fg=#{@color-active-pane-border-fg},bg=#{@color-active-pane-border-bg}"
 set -gwF pane-border-style "fg=#{@color-pane-border-fg},bg=#{@color-pane-border-bg}"
-# set -gwF window-status-activity-style "fg=#{@color-window-status-current-fg},bg=#{@color-window-status-current-bg}"
-set -gw  window-status-current-format "#[fg=colour57]#[fg=colour254,bg=colour57]#I:#W"
-# set -gwF window-status-current-style "fg=colour254,bg=colour57"
-set -gw  window-status-format "#[fg=colour235]#[fg=colour254,bg=colour235]#I:#W#[bg=colour254]"
-# set -gw  window-status-style "bg=red"
+set -gw  window-status-current-format "#[fg=colour57]#[fg=colour254,bg=colour57]#I:#W#[fg=0,bg=colour57]"
+set -gw  window-status-format "#[fg=colour235]#[fg=colour254,bg=colour235]#I:#W#[fg=0,bg=colour235]"
 set -gwF window-status-separator ""
 
+# set -gwF window-status-activity-style "fg=#{@color-window-status-current-fg},bg=#{@color-window-status-current-bg}"
+# set -gwF window-status-current-style "fg=colour254,bg=colour57"
+# set -gw  window-status-style "bg=red"
 # set -gwF clock-mode-colour "#{@theme-clock-mode-colour}"
 # set -gwF clock-mode-style "#{@theme-clock-mode-style}"
