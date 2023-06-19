@@ -24,7 +24,7 @@ set -goq @custom-separator-window-current-left ""
 set -goq @custom-separator-window-current-right ""
 
 set -g   status-left "#[fg=colour254,bg=colour233]   #S#[fg=colour233,bg=colour235]#{@custom-separator-left}#[fg=colour253,bg=colour235]󰃰 %d-%b-%y %H:%M:%S#[fg=colour235,bg=colour238]#{@custom-separator-left}#[bg=colour238]#(gitmux -cfg ~/tmux-files/.gitmux.conf \"#{pane_current_path}\")#[fg=colour238,bg=0]#{@custom-separator-left} "
-set -g   status-left-length 100
+set -g   status-left-length 200
 set -gF  status-left-style "fg=#{@color-status-fg},bg=#{@color-status-bg}"
 
 set -gF  status-right ""
