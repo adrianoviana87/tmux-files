@@ -15,21 +15,26 @@ set -goqF @theme-status-left "#[fg=colour254,bg=235] [#{#S}] #[fg=colour235,bg=c
 set -gF  message-command-style "fg=#{@color-status-fg},bg=#{@color-status-bg}"
 set -gF  message-style "fg=#{@color-status-fg},bg=#{@color-status-bg}"
 set -g   status-interval 1
-set -g   status-justify right
+set -g   status-justify left
 
 set -goq @custom-separator-left " "
+set -goq @custom-separator-right " "
 set -goq @custom-separator-window-left ""
 set -goq @custom-separator-window-right ""
 set -goq @custom-separator-window-current-left ""
 set -goq @custom-separator-window-current-right ""
 
-set -g   status-left "#[fg=colour254,bg=colour233]   #S#[fg=colour233,bg=colour235]#{@custom-separator-left}#[fg=colour253,bg=colour235]󰃰 %d-%b-%y %H:%M:%S#[fg=colour235,bg=colour238]#{@custom-separator-left}#[bg=colour238]#(gitmux -cfg ~/tmux-files/.gitmux.conf \"#{pane_current_path}\")#[fg=colour238,bg=0]#{@custom-separator-left} "
-set -g   status-left-length 200
-set -gF  status-left-style "fg=#{@color-status-fg},bg=#{@color-status-bg}"
+set -gF  status-left ""
+set -g   status-left-length 1
+set -gF  status-left-style ""
 
-set -gF  status-right ""
-set -g   status-right-length 1
-set -gF  status-right-style ""
+# set -g   status-right "#[fg=colour254,bg=colour233]   #S#[fg=colour233,bg=colour235]#{@custom-separator-right}#[fg=colour253,bg=colour235]󰃰 %d-%b-%y %H:%M:%S#[fg=colour235,bg=colour238]#{@custom-separator-right}#[bg=colour238]#(gitmux -cfg ~/tmux-files/.gitmux.conf \"#{pane_current_path}\")#[fg=colour238,bg=0]#{@custom-separator-right} "
+# set -g status-right "#[fg=colour238,bg=0]#{@custom-separator-right}#[bg=colour238]#(gitmux -cfg ~/tmux-files/.gitmux.conf \"#{pane_current_path}\")#[fg=16,bg=0]#{@custom-separator-right} #[fg=colour235,bg=colour238]󰃰 %d-%b-%y %H:%M:%S#[fg=colour253,bg=colour235]#{@custom-separator-right} #S#[fg=colour233,bg=colour235]  "
+
+
+set -g   status-right-length 200
+set -gF  status-right-style "fg=#{@color-status-fg},bg=#{@color-status-bg}"
+
 set -gF  status-style "fg=#{@color-status-fg},bg=#{@color-status-bg}"
 set -gwF mode-style "fg=#{@color-mode-fg},bg=#{@color-mode-bg}"
 set -gwF pane-active-border-style "fg=#{@color-active-pane-border-fg},bg=#{@color-active-pane-border-bg}"
