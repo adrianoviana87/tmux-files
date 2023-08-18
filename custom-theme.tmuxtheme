@@ -1,6 +1,6 @@
 # vi: ft=tmux
 set -goq @color-status-fg default
-set -goq @color-status-bg 0
+set -goq @color-status-bg default
 set -goq @color-mode-fg default
 set -goq @color-mode-bg colour25
 set -goq @color-active-pane-border-fg default
@@ -10,25 +10,24 @@ set -goq @color-pane-border-bg default
 set -goq @color-window-status-current-fg default
 set -goq @color-window-status-current-bg default
 
-set -goqF @theme-status-left "#[fg=colour254,bg=235] [#{#S}] #[fg=colour235,bg=colour235,nobold,nounderscore,noitalics]"
 
 set -gF  message-command-style "fg=#{@color-status-fg},bg=#{@color-status-bg}"
 set -gF  message-style "fg=#{@color-status-fg},bg=#{@color-status-bg}"
 set -g   status-interval 1
 set -g   status-justify left
 
-set -goq @custom-separator-left " "
-set -goq @custom-separator-right " "
-set -goq @custom-separator-window-left ""
-set -goq @custom-separator-window-right ""
-set -goq @custom-separator-window-current-left ""
-set -goq @custom-separator-window-current-right ""
+set -goq @custom-separator-left " "
+set -goq @custom-separator-right " "
+set -goq @custom-separator-window-left ""
+set -goq @custom-separator-window-right ""
+set -goq @custom-separator-window-current-left ""
+set -goq @custom-separator-window-current-right ""
 
 set -gF  status-left ""
 set -g   status-left-length 1
 set -gF  status-left-style ""
 
-set -g status-right "#[fg=colour238,bg=0]#{@custom-separator-right}#[bg=colour238] #(gitmux -cfg ~/tmux-files/.gitmux.conf \"#{pane_current_path}\")#[fg=colour235,bg=colour238]#{@custom-separator-right}#[fg=colour253,bg=colour235] 󰃰 %d-%b-%y %H:%M:%S#[fg=colour233,bg=colour235]#{@custom-separator-right}#[fg=colour254,bg=colour233]  #S"
+set -g status-right "#[fg=default,bg=default]#{@custom-separator-right}#[bg=default] #(gitmux -cfg ~/tmux-files/.gitmux.conf \"#{pane_current_path}\")#[fg=default,bg=default]#{@custom-separator-right}#[fg=default,bg=default] 󰃰 %d-%b-%y %H:%M:%S#[fg=default,bg=default]#{@custom-separator-right}#[fg=default,bg=default]  #S"
 
 set -g   status-right-length 200
 set -gF  status-right-style "fg=#{@color-status-fg},bg=#{@color-status-bg}"
@@ -37,8 +36,8 @@ set -gF  status-style "fg=#{@color-status-fg},bg=#{@color-status-bg}"
 set -gwF mode-style "fg=#{@color-mode-fg},bg=#{@color-mode-bg}"
 set -gwF pane-active-border-style "fg=#{@color-active-pane-border-fg},bg=#{@color-active-pane-border-bg}"
 set -gwF pane-border-style "fg=#{@color-pane-border-fg},bg=#{@color-pane-border-bg}"
-set -gw  window-status-current-format "#[fg=#61AFEF]#{@custom-separator-window-current-left}#[fg=colour232,bg=#61AFEF]#I:#W#[fg=#61AFEF,bg=0]#{@custom-separator-window-current-right}"
-set -gw  window-status-format "#[fg=colour235,bg=0]#{@custom-separator-window-left}#[fg=colour254,bg=colour235]#I:#W#[fg=colour235,bg=0]#{@custom-separator-window-right}"
-set -gw  window-status-activity-style "bg=0"
+set -gw  window-status-current-format "#[fg=default]#{@custom-separator-window-current-left}#[fg=default,bg=default]#I:#[bold]#W#[fg=default,bg=default,nobold]#{@custom-separator-window-current-right}"
+set -gw  window-status-format "#[fg=default,bg=default]#{@custom-separator-window-left}#[fg=default,bg=default]#I:#W#[fg=default,bg=default]#{@custom-separator-window-right}"
+set -gw  window-status-activity-style "bg=default"
 set -gwF window-status-separator ""
 
