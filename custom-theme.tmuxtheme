@@ -17,17 +17,17 @@ set -g   status-interval 1
 set -g   status-justify left
 
 set -goq @custom-separator-left " "
-set -goq @custom-separator-right " "
-set -goq @custom-separator-window-left ""
-set -goq @custom-separator-window-right ""
-set -goq @custom-separator-window-current-left ""
-set -goq @custom-separator-window-current-right ""
+set -goq @custom-separator-right ""
+set -goq @custom-separator-window-left ""
+set -goq @custom-separator-window-right ""
+set -goq @custom-separator-window-current-left ""
+set -goq @custom-separator-window-current-right ""
 
 set -gF  status-left ""
 set -g   status-left-length 1
 set -gF  status-left-style ""
 
-set -g status-right "#[fg=default,bg=default]#{@custom-separator-right}#[bg=default] #(gitmux -cfg ~/tmux-files/.gitmux.conf \"#{pane_current_path}\")#[fg=default,bg=default]#{@custom-separator-right}#[fg=default,bg=default] 󰃰 %d-%b-%y %H:%M:%S#[fg=default,bg=default]#{@custom-separator-right}#[fg=default,bg=default]  #S"
+set -g status-right "#[fg=default,bg=default]#{@custom-separator-right}#[reverse] #(gitmux -cfg ~/tmux-files/.gitmux.conf \"#{pane_current_path}\")#{@custom-separator-right}#[noreverse] 󰃰 %d-%b-%y %H:%M:%S#{@custom-separator-right}#[reverse]  #S"
 
 set -g   status-right-length 200
 set -gF  status-right-style "fg=#{@color-status-fg},bg=#{@color-status-bg}"
@@ -36,8 +36,8 @@ set -gF  status-style "fg=#{@color-status-fg},bg=#{@color-status-bg}"
 set -gwF mode-style "fg=#{@color-mode-fg},bg=#{@color-mode-bg}"
 set -gwF pane-active-border-style "fg=#{@color-active-pane-border-fg},bg=#{@color-active-pane-border-bg}"
 set -gwF pane-border-style "fg=#{@color-pane-border-fg},bg=#{@color-pane-border-bg}"
-set -gw  window-status-current-format "#[fg=default]#{@custom-separator-window-current-left}#[fg=default,bg=default]#I:#[bold]#W#[fg=default,bg=default,nobold]#{@custom-separator-window-current-right}"
-set -gw  window-status-format "#[fg=default,bg=default]#{@custom-separator-window-left}#[fg=default,bg=default]#I:#W#[fg=default,bg=default]#{@custom-separator-window-right}"
+set -gw  window-status-current-format "#[reverse]#{@custom-separator-window-current-left}#I:#W#[noreverse]#{@custom-separator-window-current-right}"
+set -gw  window-status-format "#{@custom-separator-window-left}#I:#W#{@custom-separator-window-right}"
 set -gw  window-status-activity-style "bg=default"
 set -gwF window-status-separator ""
 
